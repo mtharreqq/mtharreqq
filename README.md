@@ -1,13 +1,13 @@
 <h1 align="left">Hi, I'MTharreq 👋</h1>
 <p align="left">I specialize in creating seamless user experiences and responsive interfaces using Figma, ReactJS, and Tailwind CSS. Skilled in collaborating with dynamic teams, I consistently deliver high-quality websites that blend aesthetic design with functionality.</p>
 
-- 🌱 I’m currently learning **Full Stack Web Development**
+- 🌱 I’m always learning **Full Stack Web Development**
 
-- 👨‍💻 All of my projects are available at [www.reqqin.site](www.reqqin.site)
+- 👨‍💻 All of my projects are available at [requixite](https://www.requixite.web.id/)
 
-- 📫 How to reach me **mtharreq@gmail.com**
+- 📫 You can reach me at **mtharreq@gmail.com**
 
-- ⚡ Fun fact **I am an NPC**
+- 🚶‍➡️ Just an NPC
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
