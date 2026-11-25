@@ -61,7 +61,7 @@ const avatar = (x, y, cls = "", style = "") =>
 const baseCss = (t) => `
   text{font-family:${FAMILY};fill:${t.text}}
   .me text{fill:${t.meText}}
-  .a{opacity:0;transform-box:fill-box;transform-origin:0% 100%;animation:pop .55s ${EASE} both}
+  .a{opacity:0;transform-box:fill-box;transform-origin:0% 100%;animation:pop .4s ${EASE} both}
   .me.a{transform-origin:100% 100%}
   @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.94)}to{opacity:1;transform:none}}
   @keyframes hide{to{opacity:0;visibility:hidden}}
@@ -115,12 +115,11 @@ async function hero(theme) {
     bubble({ text: "Product engineer & designer in Bandung." }, MAXW),
     bubble({ text: "I polish apps people built fast with AI, until they feel finished." }, MAXW),
   ]);
-  const T = { type: 0.2, b: [0.95, 1.3, 1.65] };
+  const T = { av: 0.1, b: [0.1, 0.28, 0.46] };
   let y = 4, out = "";
-  out += `<g class="a typing" style="animation:pop .4s ${EASE} ${T.type}s both, hide .15s ${T.b[0] - 0.05}s forwards">${typingBubble(BX, y, t)}</g>`;
   mine.forEach((b, i) => { out += `<g class="a" style="animation-delay:${T.b[i]}s">${drawBubble(b, BX, y, t, "bl")}</g>`; y += b.h + 4; });
   y -= 4;
-  out += avatar(0, y - 40, "a", `animation-delay:${T.type}s`);
+  out += avatar(0, y - 40, "a", `animation-delay:${T.av}s`);
   return svg(W, y + 4, `${await fontFace(mine.flatMap((b) => b.lines))}${baseCss(t)}`, out,
     "Hi, I’m MTharreq. Product engineer and designer in Bandung. I polish apps people built fast with AI, until they feel finished.");
 }
@@ -130,17 +129,16 @@ const SPARK = (x, y, s, fill) => `<path transform="translate(${x} ${y}) scale(${
 
 async function now(theme) {
   const t = THEMES[theme];
-  const T0 = 2.35; // after the hello finishes
+  const T0 = 0.85; // after the hello finishes
   const at = (s) => (T0 + s).toFixed(2);
   const intro = await bubble({ text: "Here’s what I’m up to right now:" }, MAXW);
   const rows = [
     { icon: "telkomsigma", title: "Frontend Developer · Telkomsigma", sub: "Enterprise apps with Next.js, React, and Vue", meta: "2025 — now" },
     { icon: "rantai", title: "Product Developer · RantAI", sub: "Redesigned and rebuilt rantai.dev, with its own CMS", meta: "2025 — now" },
-    { icon: "spark", title: "Requixite", sub: "I polish vibecoded apps until they feel finished", meta: "requixite.my.id" },
     { icon: "telkomuniversity", title: "Computer Engineering · Telkom University", sub: "GPA 3.93 · three UI/UX competition wins", meta: "2020 — 2024" },
   ];
   const genA = "Generating from requixite.my.id/about…", genB = "Generated from requixite.my.id/about";
-  const badge = "Open to full-time & remote roles";
+  const badge = "Open to work";
 
   let y = 4, out = "";
   // intro bubble
@@ -148,9 +146,9 @@ async function now(theme) {
   y += intro.h + 8;
   // "tool call" line
   const ty = y + 9;
-  out += `<g class="a" style="animation-delay:${at(0.35)}s">${SPARK(BX + 2, ty - 7, 14, t.muted)}
-    <text class="gen1" x="${BX + 22}" y="${ty}" dominant-baseline="central" font-size="13" style="fill:${t.muted};animation:pulse 1s ease-in-out ${at(0.35)}s infinite, hide .15s ${at(2.1)}s forwards">${esc(genA)}</text>
-    <text class="gen2" x="${BX + 22}" y="${ty}" dominant-baseline="central" font-size="13" style="fill:${t.muted};opacity:0;animation:fade .35s ${EASE} ${at(2.15)}s forwards">${esc(genB)}</text></g>`;
+  out += `<g class="a" style="animation-delay:${at(0.12)}s">${SPARK(BX + 2, ty - 7, 14, t.muted)}
+    <text class="gen1" x="${BX + 22}" y="${ty}" dominant-baseline="central" font-size="13" style="fill:${t.muted};animation:pulse .8s ease-in-out ${at(0.12)}s infinite, hide .15s ${at(0.95)}s forwards">${esc(genA)}</text>
+    <text class="gen2" x="${BX + 22}" y="${ty}" dominant-baseline="central" font-size="13" style="fill:${t.muted};opacity:0;animation:fade .3s ${EASE} ${at(1.0)}s forwards">${esc(genB)}</text></g>`;
   y += 26;
 
   // card
@@ -162,15 +160,15 @@ async function now(theme) {
   card += `<text x="${CX + 16}" y="${cy + HH / 2}" dominant-baseline="central" font-size="15" font-weight="600">Now</text>`;
   const nowW = await measure("Now", 15, 600);
   card += `<text x="${CX + 16 + nowW + 10}" y="${cy + HH / 2}" dominant-baseline="central" font-size="13" style="fill:${t.muted}">MTharreq · Bandung</text>`;
-  const bw = Math.ceil((await measure(badge, 12, 500)) + 34), bx = CX + CW - 14 - bw;
-  card += `<g class="f" style="animation-delay:${at(2.25)}s"><rect x="${bx}" y="${cy + HH / 2 - 12}" width="${bw}" height="24" rx="12" fill="${t.badgeBg}"/><circle cx="${bx + 14}" cy="${cy + HH / 2}" r="3" fill="${t.green}"/><text x="${bx + 24}" y="${cy + HH / 2}" dominant-baseline="central" font-size="12" font-weight="500" style="fill:${t.badgeText}">${esc(badge)}</text></g>`;
+  const bw = Math.ceil((await measure(badge, 12, 500)) + 24 + 12), bx = CX + CW - 14 - bw;
+  card += `<g class="f" style="animation-delay:${at(1.0)}s"><rect x="${bx}" y="${cy + HH / 2 - 12}" width="${bw}" height="24" rx="12" fill="${t.badgeBg}"/><circle cx="${bx + 14}" cy="${cy + HH / 2}" r="3" fill="${t.green}"/><text x="${bx + 24}" y="${cy + HH / 2}" dominant-baseline="central" font-size="12" font-weight="500" style="fill:${t.badgeText}">${esc(badge)}</text></g>`;
   card += `<line x1="${CX + 1}" x2="${CX + CW - 1}" y1="${cy + HH}" y2="${cy + HH}" stroke="${t.line}"/>`;
 
   for (const [i, r] of rows.entries()) {
-    const ry = cy + HH + i * RH, mid = ry + RH / 2, d = at(0.75 + i * 0.3);
+    const ry = cy + HH + i * RH, mid = ry + RH / 2, d = at(0.5 + i * 0.15);
     if (i) card += `<line x1="${CX + 1}" x2="${CX + CW - 1}" y1="${ry}" y2="${ry}" stroke="${t.line}"/>`;
     // skeleton
-    card += `<g class="sk" style="animation:pulse 1s ease-in-out ${at(0.45)}s infinite, hide .2s ${d}s forwards"><rect x="${CX + 16}" y="${mid - 18}" width="36" height="36" rx="10" fill="${t.sk}"/><rect x="${CX + 64}" y="${mid - 11}" width="${CW * 0.42}" height="10" rx="5" fill="${t.sk}"/><rect x="${CX + 64}" y="${mid + 5}" width="${CW * 0.6}" height="8" rx="4" fill="${t.sk}"/></g>`;
+    card += `<g class="sk" style="animation:pulse .8s ease-in-out ${at(0.25)}s infinite, hide .15s ${d}s forwards"><rect x="${CX + 16}" y="${mid - 18}" width="36" height="36" rx="10" fill="${t.sk}"/><rect x="${CX + 64}" y="${mid - 11}" width="${CW * 0.42}" height="10" rx="5" fill="${t.sk}"/><rect x="${CX + 64}" y="${mid + 5}" width="${CW * 0.6}" height="8" rx="4" fill="${t.sk}"/></g>`;
     // content
     let ic = `<rect x="${CX + 16.5}" y="${mid - 17.5}" width="35" height="35" rx="10" fill="${theme === "dark" ? "#ffffff" : t.card}" stroke="${t.icBorder}"/>`;
     ic += r.icon === "spark"
@@ -181,29 +179,29 @@ async function now(theme) {
       <text x="${CX + 64}" y="${mid + 11}" dominant-baseline="central" font-size="13" style="fill:${t.muted}">${esc(r.sub)}</text>
       <text x="${CX + CW - 16}" y="${mid}" dominant-baseline="central" text-anchor="end" font-size="13" style="fill:${t.muted}">${esc(r.meta)}</text></g>`;
   }
-  out += `<g class="card" style="animation-delay:${at(0.45)}s">${card}</g>`;
+  out += `<g class="card" style="animation-delay:${at(0.25)}s">${card}</g>`;
   y = cy + CH + 6;
 
   // an avatar beside the last message group
   out += avatar(0, cy + CH - 40, "a", `animation-delay:${at(0)}s`);
 
   const css = `${await fontFace([intro.text, genA, genB, badge, "Now", "MTharreq · Bandung", ...rows.flatMap((r) => [r.title, r.sub, r.meta])])}${baseCss(t)}
-  .f{opacity:0;animation:fade .45s ${EASE} both}
+  .f{opacity:0;animation:fade .35s ${EASE} both}
   @keyframes fade{from{opacity:0;filter:blur(2px)}to{opacity:1;filter:none}}
-  .card{opacity:0;transform-box:fill-box;transform-origin:50% 0;animation:grow .5s ${EASE} both}
+  .card{opacity:0;transform-box:fill-box;transform-origin:50% 0;animation:grow .4s ${EASE} both}
   @keyframes grow{from{opacity:0;transform:translateY(6px) scale(.98)}to{opacity:1;transform:none}}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
   @media (prefers-reduced-motion:reduce){.f,.card{animation:none!important;opacity:1}.sk,.gen1{display:none}.gen2{animation:none!important;opacity:1}}`;
   const defs = t.shadow ? `<defs><filter id="sh" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="${t.shadow}"/></filter></defs>` : "";
   return svg(W, y, css, defs + out,
-    "What I’m up to: Frontend Developer at Telkomsigma (2025–now). Product Developer at RantAI, rebuilt rantai.dev and its CMS. Requixite: I polish vibecoded apps. Computer Engineering, Telkom University, GPA 3.93. Open to full-time and remote roles.");
+    "What I’m up to: Frontend Developer at Telkomsigma (2025–now). Product Developer at RantAI, rebuilt rantai.dev and its CMS. Computer Engineering, Telkom University, GPA 3.93. Open to work.");
 }
 
 // ---------------- talk: closing bubble ----------------
 async function closing(theme) {
   const t = THEMES[theme];
   const b = await bubble({ text: "Got an app that needs polish, or a role for me? Let’s talk 👇" }, MAXW);
-  const out = `<g class="a" style="animation-delay:5.15s">${drawBubble(b, BX, 2, t, "bl")}${avatar(0, 2 + b.h - 40)}</g>`;
+  const out = `<g class="a" style="animation-delay:2.2s">${drawBubble(b, BX, 2, t, "bl")}${avatar(0, 2 + b.h - 40)}</g>`;
   return svg(W, b.h + 4, `${await fontFace(b.lines)}${baseCss(t)}`, out, "Got an app that needs polish, or a role for me? Let’s talk.");
 }
 
@@ -232,11 +230,11 @@ function svg(w, h, css, body, title) {
 }
 
 const PILLS = [
-  ["casestudy", "See the rantai.dev case study →", "spark", false, BX, 4.75],
-  ["email", "Email", "mail", true, BX, 5.55],
-  ["x", "@tooreeq", "x", false, 0, 5.63],
-  ["linkedin", "LinkedIn", "linkedin", false, 0, 5.71],
-  ["cv", "CV (PDF)", "file", false, 0, 5.79],
+  ["casestudy", "See the rantai.dev case study →", "spark", false, BX, 2.0],
+  ["email", "Email", "mail", true, BX, 2.4],
+  ["x", "@tooreeq", "x", false, 0, 2.45],
+  ["linkedin", "LinkedIn", "linkedin", false, 0, 2.5],
+  ["cv", "CV (PDF)", "file", false, 0, 2.55],
 ];
 for (const theme of ["light", "dark"]) {
   fs.writeFileSync(path.join(OUT, `hello-${theme}.svg`), await hero(theme));
