@@ -127,6 +127,10 @@ async function hero(theme) {
 // ---------------- now: a bubble, then a "generated" card ----------------
 const SPARK = (x, y, s, fill) => `<path transform="translate(${x} ${y}) scale(${s / 24})" fill="${fill}" d="M12 1.5l2.1 6.6 6.9 2.4-6.9 2.4L12 19.5l-2.1-6.6L3 10.5l6.9-2.4z"/>`;
 
+// "Updated Nov 2026": the month this was built, so it moves with every rebuild.
+const TITLE = "Experience";
+const UPDATED = `Updated ${new Date().toLocaleString("en-US", { month: "short", year: "numeric" })}`;
+
 async function now(theme) {
   const t = THEMES[theme];
   const T0 = 0.85; // after the hello finishes
@@ -149,9 +153,9 @@ async function now(theme) {
   const cy = y;
   let card = `<path d="${bubblePath(CX + 0.5, cy + 0.5, CW - 1, CH - 1, "bl").replace(/A20,20/g, "A18,18")}" fill="${t.card}" stroke="${t.border}"${t.shadow ? ' filter="url(#sh)"' : ""}/>`;
   // header
-  card += `<text x="${CX + 16}" y="${cy + HH / 2}" dominant-baseline="central" font-size="15" font-weight="600">Now</text>`;
-  const nowW = await measure("Now", 15, 600);
-  card += `<text x="${CX + 16 + nowW + 10}" y="${cy + HH / 2}" dominant-baseline="central" font-size="13" style="fill:${t.muted}">MTharreq · Bandung</text>`;
+  card += `<text x="${CX + 16}" y="${cy + HH / 2}" dominant-baseline="central" font-size="15" font-weight="600">${TITLE}</text>`;
+  const nowW = await measure(TITLE, 15, 600);
+  card += `<text x="${CX + 16 + nowW + 10}" y="${cy + HH / 2}" dominant-baseline="central" font-size="13" style="fill:${t.muted}">${esc(UPDATED)}</text>`;
   const bw = Math.ceil((await measure(badge, 12, 500)) + 24), bx = CX + CW - 14 - bw;
   card += `<g class="f" style="animation-delay:${at(1.0)}s"><rect x="${bx}" y="${cy + HH / 2 - 12}" width="${bw}" height="24" rx="12" fill="${t.badgeBg}"/><text x="${bx + 12}" y="${cy + HH / 2}" dominant-baseline="central" font-size="12" font-weight="500" style="fill:${t.badgeText}">${esc(badge)}</text></g>`;
   card += `<line x1="${CX + 1}" x2="${CX + CW - 1}" y1="${cy + HH}" y2="${cy + HH}" stroke="${t.line}"/>`;
@@ -177,7 +181,7 @@ async function now(theme) {
   // an avatar beside the last message group
   out += avatar(0, cy + CH - 40, "a", `animation-delay:${at(0)}s`);
 
-  const css = `${await fontFace([intro.text, badge, "Now", "MTharreq · Bandung", ...rows.flatMap((r) => [r.title, r.sub, r.meta])])}${baseCss(t)}
+  const css = `${await fontFace([intro.text, badge, TITLE, UPDATED, ...rows.flatMap((r) => [r.title, r.sub, r.meta])])}${baseCss(t)}
   .f{opacity:0;animation:fade .35s ${EASE} both}
   @keyframes fade{from{opacity:0;filter:blur(2px)}to{opacity:1;filter:none}}
   .card{opacity:0;transform-box:fill-box;transform-origin:50% 0;animation:grow .4s ${EASE} both}
