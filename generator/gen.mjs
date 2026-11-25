@@ -156,8 +156,8 @@ async function now(theme) {
   card += `<text x="${CX + 16}" y="${cy + HH / 2}" dominant-baseline="central" font-size="15" font-weight="600">${TITLE}</text>`;
   const nowW = await measure(TITLE, 15, 600);
   card += `<text x="${CX + 16 + nowW + 10}" y="${cy + HH / 2}" dominant-baseline="central" font-size="13" style="fill:${t.muted}">${esc(UPDATED)}</text>`;
-  const bw = Math.ceil((await measure(badge, 12, 500)) + 24), bx = CX + CW - 14 - bw;
-  card += `<g class="f" style="animation-delay:${at(1.0)}s"><rect x="${bx}" y="${cy + HH / 2 - 12}" width="${bw}" height="24" rx="12" fill="${t.badgeBg}"/><text x="${bx + 12}" y="${cy + HH / 2}" dominant-baseline="central" font-size="12" font-weight="500" style="fill:${t.badgeText}">${esc(badge)}</text></g>`;
+  const bw = Math.ceil((await measure(badge, 12, 500)) + 20), bx = CX + CW - 14 - bw;
+  card += `<g class="f" style="animation-delay:${at(1.0)}s"><rect x="${bx}" y="${cy + HH / 2 - 12}" width="${bw}" height="24" rx="12" fill="${t.badgeBg}"/><text x="${bx + bw / 2}" y="${cy + HH / 2}" dominant-baseline="central" text-anchor="middle" font-size="12" font-weight="500" style="fill:${t.badgeText}">${esc(badge)}</text></g>`;
   card += `<line x1="${CX + 1}" x2="${CX + CW - 1}" y1="${cy + HH}" y2="${cy + HH}" stroke="${t.line}"/>`;
 
   for (const [i, r] of rows.entries()) {

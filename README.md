@@ -7,8 +7,8 @@
 
 <a href="https://requixite.my.id/about">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/now-dark.svg?v=5">
-    <img alt="What I’m up to: Frontend Developer at Telkomsigma (2025–now). Product Developer at RantAI, rebuilt rantai.dev and its CMS. Computer Engineering, Telkom University, GPA 3.93. Open to work." src="./assets/now-light.svg?v=5">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/now-dark.svg?v=6">
+    <img alt="What I’m up to: Frontend Developer at Telkomsigma (2025–now). Product Developer at RantAI, rebuilt rantai.dev and its CMS. Computer Engineering, Telkom University, GPA 3.93. Open to work." src="./assets/now-light.svg?v=6">
   </picture>
 </a>
 
