@@ -30,5 +30,3 @@
   <a href="https://linkedin.com/in/mtharreq/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/linkedin-dark.svg"><img alt="LinkedIn" src="./assets/linkedin-light.svg"></picture></a>
   <a href="https://requixite.my.id/cv-tharreq.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cv-dark.svg"><img alt="CV (PDF)" src="./assets/cv-light.svg"></picture></a>
 </p>
-
-<sub>🚶‍➡️ Otherwise, just an NPC.</sub>
