@@ -14,14 +14,14 @@
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/talk-dark.svg?v=5">
-  <img alt="Got an app that needs some love, or a job for me? Hit me up." src="./assets/talk-light.svg?v=5">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/talk-dark.svg?v=6">
+  <img alt="Got an app that needs some love, or a job for me? Let’s chat." src="./assets/talk-light.svg?v=6">
 </picture>
 
 <p>
-  <a href="https://requixite.my.id"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/site-dark.svg?v=4"><img alt="Visit requixite.my.id" src="./assets/site-light.svg?v=4"></picture></a>
-  <a href="mailto:mtharreq@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/email-dark.svg?v=4"><img alt="Email" src="./assets/email-light.svg?v=4"></picture></a>
-  <a href="https://x.com/tooreeq"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/x-dark.svg?v=4"><img alt="X @tooreeq" src="./assets/x-light.svg?v=4"></picture></a>
-  <a href="https://linkedin.com/in/mtharreq/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/linkedin-dark.svg?v=4"><img alt="LinkedIn" src="./assets/linkedin-light.svg?v=4"></picture></a>
-  <a href="https://requixite.my.id/cv-tharreq.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cv-dark.svg?v=4"><img alt="CV (PDF)" src="./assets/cv-light.svg?v=4"></picture></a>
+  <a href="https://requixite.my.id"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/site-dark.svg?v=6"><img alt="requixite.my.id" src="./assets/site-light.svg?v=6"></picture></a>
+  <a href="mailto:mtharreq@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/email-dark.svg?v=6"><img alt="Email" src="./assets/email-light.svg?v=6"></picture></a>
+  <a href="https://x.com/tooreeq"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/x-dark.svg?v=6"><img alt="X @tooreeq" src="./assets/x-light.svg?v=6"></picture></a>
+  <a href="https://linkedin.com/in/mtharreq/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/linkedin-dark.svg?v=6"><img alt="LinkedIn" src="./assets/linkedin-light.svg?v=6"></picture></a>
+  <a href="https://requixite.my.id/cv-tharreq.pdf"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/cv-dark.svg?v=6"><img alt="CV (PDF)" src="./assets/cv-light.svg?v=6"></picture></a>
 </p>
