@@ -8,6 +8,6 @@
   .dots circle{fill:#a3a3a3;animation:dot 1s ease-in-out infinite;transform-box:fill-box}
   .dots circle:nth-child(2){animation-delay:.15s}.dots circle:nth-child(3){animation-delay:.3s}
   @keyframes dot{0%,60%,100%{transform:translateY(0);opacity:.55}30%{transform:translateY(-3px);opacity:1}}
-  @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1}.typing{display:none}}</style><g class="a" style="animation-delay:2.55s"><g transform="translate(0 0)"><rect x="0.5" y="0.5" width="118" height="39" rx="19.5" fill="none" stroke="#e5e5e5"/>
+  @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1}.typing{display:none}}</style><g class="a" style="animation-delay:2.3s"><g transform="translate(0 0)"><rect x="0.5" y="0.5" width="118" height="39" rx="19.5" fill="none" stroke="#e5e5e5"/>
 <svg x="16" y="12" width="16" height="16" viewBox="0 0 24 24" color="#0a0a0a"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8M16 17H8M10 9H8"/></g></svg>
 <text x="40" y="20" dominant-baseline="central" font-size="15" font-weight="500" style="fill:#0a0a0a">CV (PDF)</text></g></g></svg>

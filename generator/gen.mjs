@@ -137,20 +137,12 @@ async function now(theme) {
     { icon: "rantai", title: "Product Developer · RantAI", sub: "Redesigned and rebuilt rantai.dev, with its own CMS", meta: "2025 — now" },
     { icon: "telkomuniversity", title: "Computer Engineering · Telkom University", sub: "GPA 3.93 · three UI/UX competition wins", meta: "2020 — 2024" },
   ];
-  const genA = "Generating from requixite.my.id/about…", genB = "Generated from requixite.my.id/about";
   const badge = "Open to work";
 
   let y = 4, out = "";
   // intro bubble
   out += `<g class="a" style="animation-delay:${at(0)}s">${drawBubble(intro, BX, y, t, "bl")}</g>`;
-  y += intro.h + 8;
-  // "tool call" line
-  const ty = y + 9;
-  out += `<g class="a" style="animation-delay:${at(0.12)}s">${SPARK(BX + 2, ty - 7, 14, t.muted)}
-    <text class="gen1" x="${BX + 22}" y="${ty}" dominant-baseline="central" font-size="13" style="fill:${t.muted};animation:pulse .8s ease-in-out ${at(0.12)}s infinite, hide .15s ${at(0.95)}s forwards">${esc(genA)}</text>
-    <text class="gen2" x="${BX + 22}" y="${ty}" dominant-baseline="central" font-size="13" style="fill:${t.muted};opacity:0;animation:fade .3s ${EASE} ${at(1.0)}s forwards">${esc(genB)}</text></g>`;
-  y += 26;
-
+  y += intro.h + 6;
   // card
   const CX = BX, CW = W - BX - 2, HH = 50, RH = 62;
   const CH = HH + rows.length * RH;
@@ -160,8 +152,8 @@ async function now(theme) {
   card += `<text x="${CX + 16}" y="${cy + HH / 2}" dominant-baseline="central" font-size="15" font-weight="600">Now</text>`;
   const nowW = await measure("Now", 15, 600);
   card += `<text x="${CX + 16 + nowW + 10}" y="${cy + HH / 2}" dominant-baseline="central" font-size="13" style="fill:${t.muted}">MTharreq · Bandung</text>`;
-  const bw = Math.ceil((await measure(badge, 12, 500)) + 24 + 12), bx = CX + CW - 14 - bw;
-  card += `<g class="f" style="animation-delay:${at(1.0)}s"><rect x="${bx}" y="${cy + HH / 2 - 12}" width="${bw}" height="24" rx="12" fill="${t.badgeBg}"/><circle cx="${bx + 14}" cy="${cy + HH / 2}" r="3" fill="${t.green}"/><text x="${bx + 24}" y="${cy + HH / 2}" dominant-baseline="central" font-size="12" font-weight="500" style="fill:${t.badgeText}">${esc(badge)}</text></g>`;
+  const bw = Math.ceil((await measure(badge, 12, 500)) + 24), bx = CX + CW - 14 - bw;
+  card += `<g class="f" style="animation-delay:${at(1.0)}s"><rect x="${bx}" y="${cy + HH / 2 - 12}" width="${bw}" height="24" rx="12" fill="${t.badgeBg}"/><text x="${bx + 12}" y="${cy + HH / 2}" dominant-baseline="central" font-size="12" font-weight="500" style="fill:${t.badgeText}">${esc(badge)}</text></g>`;
   card += `<line x1="${CX + 1}" x2="${CX + CW - 1}" y1="${cy + HH}" y2="${cy + HH}" stroke="${t.line}"/>`;
 
   for (const [i, r] of rows.entries()) {
@@ -185,13 +177,13 @@ async function now(theme) {
   // an avatar beside the last message group
   out += avatar(0, cy + CH - 40, "a", `animation-delay:${at(0)}s`);
 
-  const css = `${await fontFace([intro.text, genA, genB, badge, "Now", "MTharreq · Bandung", ...rows.flatMap((r) => [r.title, r.sub, r.meta])])}${baseCss(t)}
+  const css = `${await fontFace([intro.text, badge, "Now", "MTharreq · Bandung", ...rows.flatMap((r) => [r.title, r.sub, r.meta])])}${baseCss(t)}
   .f{opacity:0;animation:fade .35s ${EASE} both}
   @keyframes fade{from{opacity:0;filter:blur(2px)}to{opacity:1;filter:none}}
   .card{opacity:0;transform-box:fill-box;transform-origin:50% 0;animation:grow .4s ${EASE} both}
   @keyframes grow{from{opacity:0;transform:translateY(6px) scale(.98)}to{opacity:1;transform:none}}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
-  @media (prefers-reduced-motion:reduce){.f,.card{animation:none!important;opacity:1}.sk,.gen1{display:none}.gen2{animation:none!important;opacity:1}}`;
+  @media (prefers-reduced-motion:reduce){.f,.card{animation:none!important;opacity:1}.sk{display:none}}`;
   const defs = t.shadow ? `<defs><filter id="sh" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="${t.shadow}"/></filter></defs>` : "";
   return svg(W, y, css, defs + out,
     "What I’m up to: Frontend Developer at Telkomsigma (2025–now). Product Developer at RantAI, rebuilt rantai.dev and its CMS. Computer Engineering, Telkom University, GPA 3.93. Open to work.");
@@ -201,12 +193,13 @@ async function now(theme) {
 async function closing(theme) {
   const t = THEMES[theme];
   const b = await bubble({ text: "Got an app that needs polish, or a role for me? Let’s talk 👇" }, MAXW);
-  const out = `<g class="a" style="animation-delay:2.2s">${drawBubble(b, BX, 2, t, "bl")}${avatar(0, 2 + b.h - 40)}</g>`;
+  const out = `<g class="a" style="animation-delay:1.85s">${drawBubble(b, BX, 2, t, "bl")}${avatar(0, 2 + b.h - 40)}</g>`;
   return svg(W, b.h + 4, `${await fontFace(b.lines)}${baseCss(t)}`, out, "Got an app that needs polish, or a role for me? Let’s talk.");
 }
 
 // ---------------- pills ----------------
 const ICONS = {
+  globe: `<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></g>`,
   mail: `<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></g>`,
   x: `<path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>`,
   linkedin: `<path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 1 1 0-4.128 2.064 2.064 0 0 1 0 4.128zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>`,
@@ -230,11 +223,11 @@ function svg(w, h, css, body, title) {
 }
 
 const PILLS = [
-  ["casestudy", "See the rantai.dev case study →", "spark", false, BX, 2.0],
-  ["email", "Email", "mail", true, BX, 2.4],
-  ["x", "@tooreeq", "x", false, 0, 2.45],
-  ["linkedin", "LinkedIn", "linkedin", false, 0, 2.5],
-  ["cv", "CV (PDF)", "file", false, 0, 2.55],
+  ["site", "Visit requixite.my.id", "globe", true, BX, 2.1],
+  ["email", "Email", "mail", false, 0, 2.15],
+  ["x", "@tooreeq", "x", false, 0, 2.2],
+  ["linkedin", "LinkedIn", "linkedin", false, 0, 2.25],
+  ["cv", "CV (PDF)", "file", false, 0, 2.3],
 ];
 for (const theme of ["light", "dark"]) {
   fs.writeFileSync(path.join(OUT, `hello-${theme}.svg`), await hero(theme));
