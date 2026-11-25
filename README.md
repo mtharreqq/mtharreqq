@@ -19,8 +19,6 @@
   </picture>
 </a>
 
-<br><br>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/talk-dark.svg">
   <img alt="Got an app that needs polish, or a role for me? Let’s talk." src="./assets/talk-light.svg">
