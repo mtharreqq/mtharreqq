@@ -111,9 +111,9 @@ for (const [k, f] of [["telkomsigma", "logos/telkomsigma.png"], ["rantai", "logo
 async function hero(theme) {
   const t = THEMES[theme];
   const mine = await Promise.all([
-    bubble({ text: "Hi, I’m MTharreq. 👋", size: 28, weight: 600 }, MAXW),
-    bubble({ text: "Product engineer & designer in Bandung." }, MAXW),
-    bubble({ text: "I polish apps people built fast with AI, until they feel finished." }, MAXW),
+    bubble({ text: "Hi, I’m MTharreq 👋", size: 28, weight: 600 }, MAXW),
+    bubble({ text: "Product engineer & designer in Bandung" }, MAXW),
+    bubble({ text: "I fix vibecoded apps so they stop looking vibecoded" }, MAXW),
   ]);
   const T = { av: 0.1, b: [0.1, 0.28, 0.46] };
   let y = 4, out = "";
@@ -121,7 +121,7 @@ async function hero(theme) {
   y -= 4;
   out += avatar(0, y - 40, "a", `animation-delay:${T.av}s`);
   return svg(W, y + 4, `${await fontFace(mine.flatMap((b) => b.lines))}${baseCss(t)}`, out,
-    "Hi, I’m MTharreq. Product engineer and designer in Bandung. I polish apps people built fast with AI, until they feel finished.");
+    "Hi, I’m MTharreq. Product engineer and designer in Bandung. I fix vibecoded apps so they stop looking vibecoded.");
 }
 
 // ---------------- now: a bubble, then a "generated" card ----------------
@@ -196,9 +196,9 @@ async function now(theme) {
 // ---------------- talk: closing bubble ----------------
 async function closing(theme) {
   const t = THEMES[theme];
-  const b = await bubble({ text: "Got an app that needs polish, or a role for me? Let’s talk 👇" }, MAXW);
+  const b = await bubble({ text: "Got an app that needs some love, or a job for me? hmu 👇" }, MAXW);
   const out = `<g class="a" style="animation-delay:1.85s">${drawBubble(b, BX, 2, t, "bl")}${avatar(0, 2 + b.h - 40)}</g>`;
-  return svg(W, b.h + 4, `${await fontFace(b.lines)}${baseCss(t)}`, out, "Got an app that needs polish, or a role for me? Let’s talk.");
+  return svg(W, b.h + 4, `${await fontFace(b.lines)}${baseCss(t)}`, out, "Got an app that needs some love, or a job for me? Hit me up.");
 }
 
 // ---------------- pills ----------------

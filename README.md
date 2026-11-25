@@ -1,7 +1,7 @@
 <a href="https://requixite.my.id">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/hello-dark.svg?v=4">
-    <img alt="Hi, I’m MTharreq. Product engineer and designer in Bandung. I polish apps people built fast with AI, until they feel finished." src="./assets/hello-light.svg?v=4">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/hello-dark.svg?v=5">
+    <img alt="Hi, I’m MTharreq. Product engineer and designer in Bandung. I fix vibecoded apps so they stop looking vibecoded." src="./assets/hello-light.svg?v=5">
   </picture>
 </a>
 
@@ -14,8 +14,8 @@
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/talk-dark.svg?v=4">
-  <img alt="Got an app that needs polish, or a role for me? Let’s talk." src="./assets/talk-light.svg?v=4">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/talk-dark.svg?v=5">
+  <img alt="Got an app that needs some love, or a job for me? Hit me up." src="./assets/talk-light.svg?v=5">
 </picture>
 
 <p>
