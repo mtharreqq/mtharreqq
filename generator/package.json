@@ -1,0 +1,13 @@
+{
+  "name": "profile-svg-generator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node gen.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.65.0",
+    "sharp": "0.34.4",
+    "subset-font": "2.4.0"
+  }
+}
