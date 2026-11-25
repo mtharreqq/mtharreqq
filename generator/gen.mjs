@@ -211,15 +211,15 @@ const ICONS = {
   file: `<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8M16 17H8M10 9H8"/></g>`,
 };
 // A button. With a label: icon + text pill. With only a title: a round icon button.
-async function pill(theme, label, icon, primary, title = label, delay = 0) {
+async function pill(theme, label, icon, primary, title = label, delay = 0, inset = 0) {
   const t = THEMES[theme];
   const size = 15, H = 40, padX = 16, ic = 16, gap = 8;
-  const W = label ? Math.ceil(padX + ic + gap + (await measure(label, size, 500)) + padX) : H;
+  const W = inset + (label ? Math.ceil(padX + ic + gap + (await measure(label, size, 500)) + padX) : H);
   const bg = primary ? t.meBg : "none", fg = primary ? t.meText : t.text, stroke = primary ? t.meBg : t.border;
   const ix = label ? padX : (H - ic) / 2;
-  const body = `<g class="a" style="animation-delay:${delay}s"><rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="${(H - 1) / 2}" fill="${bg}" stroke="${stroke}"/>
+  const body = `<g class="a" style="animation-delay:${delay}s"><g transform="translate(${inset} 0)"><rect x="0.5" y="0.5" width="${W - inset - 1}" height="${H - 1}" rx="${(H - 1) / 2}" fill="${bg}" stroke="${stroke}"/>
 <svg x="${ix}" y="${(H - ic) / 2}" width="${ic}" height="${ic}" viewBox="0 0 24 24" color="${fg}">${ICONS[icon]}</svg>${label ? `
-<text x="${padX + ic + gap}" y="${H / 2}" dominant-baseline="central" font-size="${size}" font-weight="500" style="fill:${fg}">${esc(label)}</text>` : ""}</g>`;
+<text x="${padX + ic + gap}" y="${H / 2}" dominant-baseline="central" font-size="${size}" font-weight="500" style="fill:${fg}">${esc(label)}</text>` : ""}</g></g>`;
   return svg(W, H, `${label ? await fontFace([label]) : ""}${baseCss(t)}`, body, title);
 }
 
@@ -228,7 +228,7 @@ function svg(w, h, css, body, title) {
 }
 
 const PILLS = [
-  ["site", "requixite.my.id", "globe", true, "requixite.my.id", 2.1],
+  ["site", "requixite.my.id", "globe", true, "requixite.my.id", 2.1, BX], // inset lines it up with the bubbles
   ["email", "", "mail", false, "Email", 2.15],
   ["x", "", "x", false, "X @tooreeq", 2.2],
   ["linkedin", "", "linkedin", false, "LinkedIn", 2.25],
@@ -238,8 +238,8 @@ for (const theme of ["light", "dark"]) {
   fs.writeFileSync(path.join(OUT, `hello-${theme}.svg`), await hero(theme));
   fs.writeFileSync(path.join(OUT, `now-${theme}.svg`), await now(theme));
   fs.writeFileSync(path.join(OUT, `talk-${theme}.svg`), await closing(theme));
-  for (const [name, label, icon, primary, title, delay] of PILLS)
-    fs.writeFileSync(path.join(OUT, `${name}-${theme}.svg`), await pill(theme, label, icon, primary, title, delay));
+  for (const [name, label, icon, primary, title, delay, inset] of PILLS)
+    fs.writeFileSync(path.join(OUT, `${name}-${theme}.svg`), await pill(theme, label, icon, primary, title, delay, inset));
 }
 await browser.close();
 for (const f of fs.readdirSync(OUT)) console.log(f, fs.statSync(path.join(OUT, f)).size);

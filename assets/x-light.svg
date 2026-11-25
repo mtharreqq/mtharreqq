@@ -8,5 +8,5 @@
   .dots circle{fill:#a3a3a3;animation:dot 1s ease-in-out infinite;transform-box:fill-box}
   .dots circle:nth-child(2){animation-delay:.15s}.dots circle:nth-child(3){animation-delay:.3s}
   @keyframes dot{0%,60%,100%{transform:translateY(0);opacity:.55}30%{transform:translateY(-3px);opacity:1}}
-  @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1}.typing{display:none}}</style><g class="a" style="animation-delay:2.2s"><rect x="0.5" y="0.5" width="39" height="39" rx="19.5" fill="none" stroke="#e5e5e5"/>
-<svg x="12" y="12" width="16" height="16" viewBox="0 0 24 24" color="#0a0a0a"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></g></svg>
+  @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1}.typing{display:none}}</style><g class="a" style="animation-delay:2.2s"><g transform="translate(0 0)"><rect x="0.5" y="0.5" width="39" height="39" rx="19.5" fill="none" stroke="#e5e5e5"/>
+<svg x="12" y="12" width="16" height="16" viewBox="0 0 24 24" color="#0a0a0a"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></g></g></svg>

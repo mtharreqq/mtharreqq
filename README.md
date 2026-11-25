@@ -19,7 +19,7 @@
 </picture>
 
 <p>
-  <a href="https://requixite.my.id"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/site-dark.svg?v=6"><img alt="requixite.my.id" src="./assets/site-light.svg?v=6"></picture></a>
+  <a href="https://requixite.my.id"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/site-dark.svg?v=7"><img alt="requixite.my.id" src="./assets/site-light.svg?v=7"></picture></a>
   <a href="mailto:mtharreq@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/email-dark.svg?v=6"><img alt="Email" src="./assets/email-light.svg?v=6"></picture></a>
   <a href="https://x.com/tooreeq"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/x-dark.svg?v=6"><img alt="X @tooreeq" src="./assets/x-light.svg?v=6"></picture></a>
   <a href="https://linkedin.com/in/mtharreq/"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/linkedin-dark.svg?v=6"><img alt="LinkedIn" src="./assets/linkedin-light.svg?v=6"></picture></a>
