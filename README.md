@@ -1,21 +1,21 @@
 <a href="https://requixite.my.id" title="Visit requixite.my.id">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/hello-dark.svg?v=6">
-    <img align="top" alt="Hi, I’m MTharreq. Product engineer and designer in Bandung. I fix vibecoded apps so they stop looking vibecoded." src="./assets/hello-light.svg?v=6">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/hello-dark.svg?v=7">
+    <img align="top" alt="Hi, I’m MTharreq. Product engineer and designer in Bandung. I fix vibecoded apps so they stop looking vibecoded." src="./assets/hello-light.svg?v=7">
   </picture>
 </a>
 
 <a href="https://requixite.my.id/about" title="More about me">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/now-dark.svg?v=7">
-    <img align="top" alt="What I’m up to: Frontend Developer at Telkomsigma (2025–now). Product Developer at RantAI, rebuilt rantai.dev and its CMS. Computer Engineering, Telkom University, GPA 3.93. Open to work." src="./assets/now-light.svg?v=7">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/now-dark.svg?v=8">
+    <img align="top" alt="What I’m up to: Frontend Developer at Telkomsigma (2025–now). Product Developer at RantAI, rebuilt rantai.dev and its CMS. Computer Engineering, Telkom University, GPA 3.93. Open to work." src="./assets/now-light.svg?v=8">
   </picture>
 </a>
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/talk-dark.svg?v=6">
-  <img alt="Got an app that needs some love, or a job for me? Let’s chat." src="./assets/talk-light.svg?v=6">
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/talk-dark.svg?v=7">
+  <img align="top" alt="Got an app that needs some love, or a job for me? Let’s chat." src="./assets/talk-light.svg?v=7">
 </picture>
 
 <p>
