@@ -120,7 +120,7 @@ async function hero(theme) {
   mine.forEach((b, i) => { out += `<g class="a" style="animation-delay:${T.b[i]}s">${drawBubble(b, BX, y, t, "bl")}</g>`; y += b.h + 4; });
   y -= 4;
   out += avatar(0, y - 40, "a", `animation-delay:${T.av}s`);
-  return svg(W, y + 4, `${await fontFace(mine.flatMap((b) => b.lines))}${baseCss(t)}`, out,
+  return svg(W, y + 2, `${await fontFace(mine.flatMap((b) => b.lines))}${baseCss(t)}`, out,
     "Hi, I’m MTharreq. Product engineer and designer in Bandung. I fix vibecoded apps so they stop looking vibecoded.");
 }
 
@@ -143,7 +143,7 @@ async function now(theme) {
   ];
   const badge = "Open to work";
 
-  let y = 4, out = "";
+  let y = 2, out = ""; // hello ends 2px below its last bubble: 2 + 2 = the 4px between bubbles
   // intro bubble
   out += `<g class="a" style="animation-delay:${at(0)}s">${drawBubble(intro, BX, y, t, "bl")}</g>`;
   y += intro.h + 6;
