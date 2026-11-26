@@ -1,7 +1,7 @@
 <a href="https://requixite.my.id" title="Visit requixite.my.id">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/hello-dark.svg?v=8">
-    <img align="top" alt="Hi, I’m MTharreq. Product engineer and designer in Bandung. I fix vibecoded apps so they stop looking vibecoded." src="./assets/hello-light.svg?v=8">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/hello-dark.svg?v=9">
+    <img align="top" alt="Hi, I’m Tharreq. Product engineer and designer in Bandung. I fix vibecoded apps so they stop looking vibecoded." src="./assets/hello-light.svg?v=9">
   </picture>
 </a>
 

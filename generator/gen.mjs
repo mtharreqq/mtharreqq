@@ -115,7 +115,7 @@ for (const [k, f] of [["telkomsigma", "logos/telkomsigma.png"], ["rantai", "logo
 async function hero(theme) {
   const t = THEMES[theme];
   const mine = await Promise.all([
-    bubble({ text: "Hi, I’m MTharreq 👋", size: 28, weight: 600 }, MAXW),
+    bubble({ text: "Hi, I’m Tharreq 👋", size: 28, weight: 600 }, MAXW),
     bubble({ text: "Product engineer & designer in Bandung" }, MAXW),
     bubble({ text: "I fix vibecoded apps so they stop looking vibecoded" }, MAXW),
   ]);
@@ -125,7 +125,7 @@ async function hero(theme) {
   y -= GAP;
   out += avatar(0, y - 40, "a", `animation-delay:${T.av}s`);
   return svg(W, y + GAP / 2, `${await fontFace(mine.flatMap((b) => b.lines))}${baseCss(t)}`, out,
-    "Hi, I’m MTharreq. Product engineer and designer in Bandung. I fix vibecoded apps so they stop looking vibecoded.");
+    "Hi, I’m Tharreq. Product engineer and designer in Bandung. I fix vibecoded apps so they stop looking vibecoded.");
 }
 
 // ---------------- now: a bubble, then a "generated" card ----------------
