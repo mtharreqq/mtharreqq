@@ -141,7 +141,7 @@ async function now(theme) {
   const at = (s) => (T0 + s).toFixed(2);
   const intro = await bubble({ text: "Here’s what I’m up to right now:" }, MAXW);
   const rows = [
-    { icon: "telkomsigma", title: "Frontend Developer · Telkomsigma", sub: "Enterprise apps with Next.js, React, and Vue", meta: "2025 — now" },
+    { icon: "telkomsigma", title: "Full-stack Developer · Telkomsigma", sub: "Enterprise apps with Next.js, React, and Vue", meta: "2025 — now" },
     { icon: "rantai", title: "Product Developer · RantAI", sub: "Redesigned and rebuilt rantai.dev, with its own CMS", meta: "2025 — now" },
     { icon: "telkomuniversity", title: "Computer Engineering · Telkom University", sub: "GPA 3.93 · three UI/UX competition wins", meta: "2020 — 2024" },
   ];
@@ -194,7 +194,7 @@ async function now(theme) {
   @media (prefers-reduced-motion:reduce){.f,.card{animation:none!important;opacity:1}.sk{display:none}}`;
   const defs = t.shadow ? `<defs><filter id="sh" x="-5%" y="-5%" width="110%" height="120%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="${t.shadow}"/></filter></defs>` : "";
   return svg(W, y, css, defs + out,
-    "What I’m up to: Frontend Developer at Telkomsigma (2025–now). Product Developer at RantAI, rebuilt rantai.dev and its CMS. Computer Engineering, Telkom University, GPA 3.93. Open to work.");
+    "What I’m up to: Full-stack Developer at Telkomsigma (2025–now). Product Developer at RantAI, rebuilt rantai.dev and its CMS. Computer Engineering, Telkom University, GPA 3.93. Open to work.");
 }
 
 // ---------------- talk: closing bubble ----------------
