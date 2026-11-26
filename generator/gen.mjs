@@ -104,9 +104,10 @@ const typingBubble = (x, y, t) =>
 
 // ---------------- hello: three bubbles, typing first ----------------
 const W = 600, BX = 52, MAXW = W - BX - 30;
-// Every gap between messages is GAP. Each image keeps GAP/2 above and below,
-// so two images meet at GAP (README sets align="top" so GitHub adds nothing).
-const GAP = 8;
+// GAP between chat bubbles, UI_GAP around anything that isn't a bubble (the card, the buttons).
+// Images meet with no space between them (README sets align="top"), so each one
+// carries half of the gap at its top and bottom edges.
+const GAP = 4, UI_GAP = 8;
 const LOGOS = {};
 for (const [k, f] of [["telkomsigma", "logos/telkomsigma.png"], ["rantai", "logos/rantai.png"], ["telkomuniversity", "logos/telkomuniversity.png"]])
   LOGOS[k] = (await sharp(`${SRC}${f}`).resize(72, 72, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } }).png().toBuffer()).toString("base64");
@@ -149,7 +150,7 @@ async function now(theme) {
   let y = GAP / 2, out = "";
   // intro bubble
   out += `<g class="a" style="animation-delay:${at(0)}s">${drawBubble(intro, BX, y, t, "bl")}</g>`;
-  y += intro.h + GAP;
+  y += intro.h + UI_GAP;
   // card
   const CX = BX, CW = W - BX - 2, HH = 50, RH = 62;
   const CH = HH + rows.length * RH;
@@ -179,7 +180,7 @@ async function now(theme) {
       <text x="${CX + CW - 16}" y="${mid}" dominant-baseline="central" text-anchor="end" font-size="13" style="fill:${t.muted}">${esc(r.meta)}</text></g>`;
   }
   out += `<g class="card" style="animation-delay:${at(0.25)}s">${card}</g>`;
-  y = cy + CH + GAP / 2;
+  y = cy + CH + UI_GAP / 2;
 
   // an avatar beside the last message group
   out += avatar(0, cy + CH - 40, "a", `animation-delay:${at(0)}s`);
@@ -200,8 +201,8 @@ async function now(theme) {
 async function closing(theme) {
   const t = THEMES[theme];
   const b = await bubble({ text: "Got an app that needs some love, or a job for me? Let’s chat 👇" }, MAXW);
-  const out = `<g class="a" style="animation-delay:1.85s">${drawBubble(b, BX, GAP / 2, t, "bl")}${avatar(0, GAP / 2 + b.h - 40)}</g>`;
-  return svg(W, GAP / 2 + b.h + GAP, `${await fontFace(b.lines)}${baseCss(t)}`, out, "Got an app that needs some love, or a job for me? Let’s chat.");
+  const out = `<g class="a" style="animation-delay:1.85s">${drawBubble(b, BX, UI_GAP / 2, t, "bl")}${avatar(0, UI_GAP / 2 + b.h - 40)}</g>`;
+  return svg(W, UI_GAP / 2 + b.h + UI_GAP, `${await fontFace(b.lines)}${baseCss(t)}`, out, "Got an app that needs some love, or a job for me? Let’s chat.");
 }
 
 // ---------------- pills ----------------
